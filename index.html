@@ -39,7 +39,7 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbarMenu">
       <ul class="navbar-nav">
-        <li><a class="nav-link" href="#header">Home</a></li>
+        <li><a class="nav-link active" href="#header">Home</a></li>
         <li><a class="nav-link" href="#about">About</a></li>
         <li><a class="nav-link" href="#skills">Skills</a></li>
         <li><a class="nav-link" href="#projects">Projects</a></li>
@@ -63,6 +63,22 @@
             <span class="typed-cursor">|</span><br>
             based in Taipei
           </h2>
+          <!-- <ul class="Words">
+            <li class="Words-line">
+              <p>&nbsp;</p>
+            </li>
+            <li class="Words-line">
+              <p>I'm a passionate</p>
+              <p>
+                <span class="typed" style="color: #681616;"></span>
+                <span class="typed-cursor">|</span>
+              </p>
+              <p>based in Taipei</p>
+              <p>&nbsp;</p>
+            </li>
+            <li class="Words-line">
+            </li>
+          </ul> -->
           <div class="d-flex justify-content-center justify-content-lg-start social-links mt-3">
             <a href="https://www.linkedin.com/in/lan-vu-phd/" target="_blank" class="linkedin">
               <img src="./assets/img/linkedin.png" alt="Linkedin Icon" class="bi" style="width: 20px; height: 20px;">
@@ -86,32 +102,39 @@
   </header>
   <!-- ABOUT SECTION -->
   <section id="about" class="about">
-
-    <!-- ======= About Me ======= -->
     <div class="about-me container">
-      <div class="section-title">
-        <h2>About</h2>
-        <!-- <p>Learn more about me</p> -->
-      </div>
       <div class="row">
+
+        <!-- LEFT COLUMN -->
         <div class="col-lg-4" data-aos="fade-right">
-          <img src="./assets/img/Lan.png" class="img-fluid" alt="">
+          <div class="section-title">
+            <h2>About</h2>
+          </div>
+          <img src="./assets/img/Lan-coloured.png" class="img-fluid d-block mx-auto" alt="">
         </div>
+
+        <!-- RIGHT COLUMN -->
         <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-          <h3>UX Researcher &amp; Data Learner</h3>
-          <p class="fst-italic">
-            A creative UX researcher with a strong foundation in data analytics, dedicated to designing and implementing
+          <div class="section-title">
+            <div class="title-wrapper long">
+              <h2>Interdisciplinary Design Technologist &amp; Data-driven Designer</h2>
+            </div>
+          </div>
+          <p>
+            A creative UX researcher with a strong foundation in data analytics, dedicated to designing and
+            implementing
             innovative solutions that enhance user experiences. Passionate about understanding user behavior and
             preferences to inform effective design decisions. Collaborates effectively with cross-functional teams to
             deliver exceptional results.
           </p>
+
+          <!-- Your lists and interests can follow here -->
           <div class="row">
             <div class="col-lg-6">
               <ul>
                 <li><i class="bi bi-chevron-right"></i> <strong>Language:</strong> <span>Vietnamese, English,
                     Chinese</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>kennyvulan@gmail.com</span>
-                </li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>kennyvulan@gmail.com</span></li>
               </ul>
             </div>
             <div class="col-lg-6">
@@ -122,12 +145,47 @@
               </ul>
             </div>
           </div>
-        </div>
-      </div>
 
-    </div><!-- End About Me -->
+          <!-- Interests -->
+          <div class="interests">
+            <div class="section-title">
+              <div class="title-wrapper short">
+                <h2>Interests</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3 col-md-4">
+                <div class="icon-box">
+                  <h3 class="box" style="color: #e39d2d;">User Experience</h3>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4">
+                <div class="icon-box">
+                  <h3 class="box" style="color: #e39d2d;">Game Design</h3>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4">
+                <div class="icon-box">
+                  <h3 class="box" style="color: #e39d2d;">HCI</h3>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4">
+                <div class="icon-box">
+                  <h3 class="box" style="color: #e39d2d;">AI/ML</h3>
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <!-- ======= Skills  ======= -->
+        </div> <!-- END RIGHT COLUMN -->
+
+      </div> <!-- END ROW -->
+    </div> <!-- END CONTAINER -->
+  </section>
+
+  <!-- ======= Skills  ======= -->
+  <section id="skills" class="skills">
+
     <div class="skills container">
 
       <div class="section-title">
@@ -211,70 +269,31 @@
 
       </div>
 
-    </div><!-- End Skills -->
-
-    <!-- ======= Interests ======= -->
-    <div class="interests container">
-
-      <div class="section-title">
-        <h2>Interests</h2>
+    </div>
+  </section>
+  <!-- End Skills -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="gallery">
+      <div class="project-card" onclick="openModal('modal1')">
+        <img src="./assets/img/project1-thumb.jpg" alt="Project 1 Thumbnail" />
+        <h3>Smart City Interactivity</h3>
+        <p>Doctoral research on thick data & digital twin in smart cities.</p>
       </div>
+    </div>
+  </section>
 
-      <div class="row">
-        <div class="col-lg-3 col-md-4">
-          <div class="icon-box">
-            <!-- <i class="ri-user-5-line" style="color: #ffbb2c;"></i> -->
-            <h3 style="color: #e39d2d;">User Experience</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-          <div class="icon-box">
-            <!-- <i class="ri-service-line" style="color: #5578ff;"></i> -->
-            <h3 style="color: #e39d2d;">Service Design</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-          <div class="icon-box">
-            <!-- <i class="ri-database-line" style="color: #e80368;"></i> -->
-            <h3 style="color: #e39d2d;">HCI</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
-          <div class="icon-box">
-            <!-- <i class="ri-chat-smile-2-line" style="color: #e361ff;"></i> -->
-            <h3 style="color: #e39d2d;">NLP</h3>
-          </div>
-        </div>
-      </div>
+  <section id="publications">
+    <h2>Publications</h2>
+    <p>List of academic works...</p>
+  </section>
 
+  <section id="awards">
+    <h2>Awards</h2>
+    <p>List of honors and recognitions...</p>
+  </section>
 
-      <!-- <section id="skills">
-    <h2>Skills</h2>
-    <p>Organized by category with expandable sections (to be implemented)...</p>
-  </section> -->
-
-      <section id="projects">
-        <h2>Projects</h2>
-        <div class="gallery">
-          <div class="project-card" onclick="openModal('modal1')">
-            <img src="./assets/img/project1-thumb.jpg" alt="Project 1 Thumbnail" />
-            <h3>Smart City Interactivity</h3>
-            <p>Doctoral research on thick data & digital twin in smart cities.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="publications">
-        <h2>Publications</h2>
-        <p>List of academic works...</p>
-      </section>
-
-      <section id="awards">
-        <h2>Awards</h2>
-        <p>List of honors and recognitions...</p>
-      </section>
-
-      <!-- <div id="modal1" class="modal">
+  <!-- <div id="modal1" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal1')">&times;</span>
       <img id="mainImage" src="assets/img/project1-main.jpg" alt="Main Project Image" />
@@ -289,9 +308,9 @@
     </div>
   </div> -->
 
-      <script src="script.js"></script>
-      <!-- Template Main JS File -->
-      <script src="./assets/js/main.js"></script>
+  <script src="script.js"></script>
+  <!-- Template Main JS File -->
+  <script src="./assets/js/main.js"></script>
 </body>
 
 </html>

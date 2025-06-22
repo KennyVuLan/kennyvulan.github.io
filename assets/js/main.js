@@ -1,4 +1,5 @@
 // Typing effect
+
 const roles = ["UX Researcher ", "Interaction Designer ", "AI-Data Enthusiast "];
 let i = 0;
 let j = 0;
@@ -109,3 +110,39 @@ document.addEventListener("DOMContentLoaded", function () {
     heroSection.classList.remove("hide-hero");
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll("section");
+  const links = document.querySelectorAll(".nav-link");
+
+  // Update active state on scroll
+  window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+      const top = section.offsetTop - 70; // Adjust for header
+      const height = section.offsetHeight;
+      if (scrollY >= top && scrollY < top + height) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    links.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("active");
+      }
+    });
+  });
+
+  // Update active state on nav click
+  links.forEach(link => {
+    link.addEventListener("click", (e) => {
+      // Remove active from all links
+      links.forEach(l => l.classList.remove("active"));
+      // Add to clicked link
+      link.classList.add("active");
+    });
+  });
+});
+
