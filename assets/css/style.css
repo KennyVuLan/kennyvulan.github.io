@@ -36,7 +36,8 @@ html {
   transition: width 0.3s ease;
 }
 
-.nav-link:hover::after {
+.nav-link:hover::after,
+.nav-link.active::after {
   width: 100%;
 }
 
@@ -167,37 +168,61 @@ html {
   }
 }
 
-section {
+/* section {
   overflow: hidden;
   position: absolute;
   width: 100%;
   top: 140px;
   bottom: 100%;
   opacity: 0;
+  background-color: rgba(255, 255, 255, 0.97);
+  backdrop-filter: none;
   visibility: hidden;
   transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
-
   z-index: 0;
+} */
+
+section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+
+  opacity: 0;
+  visibility: hidden;
+
+  background-color: rgba(255, 255, 255, 1);
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  z-index: 0;
+  /* base z-index */
 }
 
 section .container {
+  position: relative;
+  height: 100vh;
+  padding-bottom: 80px;
   width: 100%;
   max-width: 100%;
-  padding: 30px;
+  min-height: 100vh;
+  padding: 50px;
   box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.9);
+  background-color: #ffffff;
   color: #000;
 }
 
 section.section-show {
   opacity: 1;
   visibility: visible;
-  position: fixed;
+  position: absolute;
   top: 0;
   bottom: 0;
   width: 100vw;
   height: 100vh;
   overflow-y: auto;
+  z-index: 1;
 }
 
 .section-title h2 {
@@ -322,6 +347,22 @@ body::before {
     background-repeat: no-repeat;
     background-attachment: fixed;
     z-index: -1;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #3b82f6;
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
   }
 }
 

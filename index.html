@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
-<body class="font-sans bg-gray-50 text-gray-800">
+<body class="font-sans bg-white text-gray-800">
   <!-- Navigation -->
   <nav class="fixed w-full bg-white shadow-sm z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,7 +28,8 @@
         </div>
         <div class="hidden md:block">
           <div class="ml-10 flex items-center space-x-8">
-            <a href="#header" class="nav-link gradient-text hover:text-blue-500 px-3 py-2 text-sm font-medium">Home</a>
+            <a href="#header"
+              class="nav-link gradient-text hover:text-blue-500 px-3 py-2 text-sm font-medium active">Home</a>
             <a href="#about" class="nav-link gradient-text hover:text-blue-500 px-3 py-2 text-sm font-medium">About</a>
             <a href="#skills"
               class="nav-link gradient-text hover:text-blue-500 px-3 py-2 text-sm font-medium">Skills</a>
@@ -36,12 +37,13 @@
               class="nav-link gradient-text hover:text-blue-500 px-3 py-2 text-sm font-medium">Projects</a>
             <a href="#publications"
               class="nav-link gradient-text hover:text-blue-500 px-3 py-2 text-sm font-medium">Publications</a>
-            <a href="#awards"
-              class="nav-link gradient-text hover:text-blue-500 px-3 py-2 text-sm font-medium">Awards</a>
+            <a href="#recognition"
+              class="nav-link gradient-text hover:text-blue-500 px-3 py-2 text-sm font-medium">Recognition</a>
             <a href="#contact"
               class="nav-link gradient-text hover:text-blue-500 px-3 py-2 text-sm font-medium">Contact</a>
           </div>
         </div>
+        <!-- Mobile Menu Button -->
         <div class="-mr-2 flex md:hidden">
           <button type="button" id="mobile-menu-button"
             class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-500 focus:outline-none">
@@ -56,13 +58,15 @@
     <!-- Mobile menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
       <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-        <a href="#header" class="gradient-text block px-3 py-2 text-base font-medium hover:text-blue-500">Home</a>
+        <a href="#header"
+          class="gradient-text block px-3 py-2 text-base font-medium hover:text-blue-500 active">Home</a>
         <a href="#about" class="gradient-text block px-3 py-2 text-base font-medium hover:text-blue-500">About</a>
         <a href="#skills" class="gradient-text block px-3 py-2 text-base font-medium hover:text-blue-500">Skills</a>
         <a href="#projects" class="gradient-text block px-3 py-2 text-base font-medium hover:text-blue-500">Projects</a>
         <a href="#publications"
           class="gradient-text block px-3 py-2 text-base font-medium hover:text-blue-500">Publications</a>
-        <a href="#awards" class="gradient-text block px-3 py-2 text-base font-medium hover:text-blue-500">Awards</a>
+        <a href="#recognition"
+          class="gradient-text block px-3 py-2 text-base font-medium hover:text-blue-500">Recognition</a>
         <a href="#contact" class="gradient-text block px-3 py-2 text-base font-medium hover:text-blue-500">Contact</a>
       </div>
     </div>
@@ -105,29 +109,36 @@
     <div class="about-me container">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
-        <div class="flex flex-col md:flex-row items-center">
-          <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
-            <h3 class="text-2xl font-semibold mb-4 gradient-text">Interdisciplinary Design Technologist & Data-driven
-              Designer</h3>
-            <div class="md:w-1/2 flex justify-center">
-              <div class="relative">
+
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <!-- LEFT COLUMN -->
+          <div class="space-y-8">
+            <!-- Title -->
+            <h3 class="text-2xl font-semibold gradient-text text-center md:text-left">
+              Interdisciplinary Design Technologist & Data-driven Designer
+            </h3>
+
+            <!-- Image with glow -->
+            <div class="flex justify-center">
+              <div class="relative flex items-center justify-center w-64 h-64 md:w-80 md:h-80">
                 <div
-                  class="absolute -inset-4 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur opacity-75">
+                  class="absolute inset-0 -inset-4 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur opacity-75 pointer-events-none z-0">
                 </div>
-                <!-- <img src="./assets/img/Lan-coloured.png" alt="Vu Hong Lan"
-              class="relative w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-white">
-                  -->
                 <img src="./assets/img/Lan-coloured.png" alt="Vu Hong Lan"
-                  class="relative w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-white">
+                  class="relative w-full h-full rounded-full object-cover border-4 border-white z-10">
               </div>
             </div>
-            <p class="text-gray-600 mb-6">
+
+            <!-- Description -->
+            <p class="text-gray-600 text-justify">
               A creative UX researcher with a strong foundation in data analytics, dedicated to designing and
               implementing
               innovative solutions that enhance user experiences. Passionate about understanding user behavior and
               preferences to inform effective design decisions. Collaborates effectively with cross-functional teams to
               deliver exceptional results.
             </p>
+
+            <!-- Personal + Professional Info in 2 columns -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <h4 class="font-semibold text-gray-800 mb-2">Personal Info</h4>
@@ -157,31 +168,77 @@
               </div>
             </div>
           </div>
-          <div class="md:w-1/2">
-            <h3 class="text-2xl font-semibold mb-6 gradient-text">Interests</h3>
-            <div class="grid grid-cols-2 gap-4">
-              <div class="bg-blue-50 p-6 rounded-lg">
-                <i class="fas fa-user-circle text-blue-500 text-3xl mb-3"></i>
-                <h4 class="font-semibold">User Experience</h4>
-              </div>
-              <div class="bg-purple-50 p-6 rounded-lg">
-                <i class="fas fa-gamepad text-purple-500 text-3xl mb-3"></i>
-                <h4 class="font-semibold">Game Design</h4>
-              </div>
-              <div class="bg-indigo-50 p-6 rounded-lg">
-                <i class="fas fa-laptop-code text-indigo-500 text-3xl mb-3"></i>
-                <h4 class="font-semibold">HCI</h4>
-              </div>
-              <div class="bg-pink-50 p-6 rounded-lg">
-                <i class="fas fa-robot text-pink-500 text-3xl mb-3"></i>
-                <h4 class="font-semibold">AI/ML</h4>
+
+          <!-- RIGHT COLUMN -->
+          <div class="space-y-12">
+            <!-- Education -->
+            <div>
+              <h3 class="text-2xl font-semibold mb-6 gradient-text text-left">Education</h3>
+              <ul class="space-y-4">
+                <li class="flex items-start">
+                  <div class="mr-4">
+                    <div class="w-16 h-16 bg-white rounded-lg"></div>
+                  </div>
+                  <div>
+                    <h4 class="font-medium">PhD in Design</h4>
+                    <p class="text-sm text-gray-600">National Taipei University of Technology (2021–Present)</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <div class="mr-4">
+                    <div class="w-16 h-16 bg-white rounded-lg overflow-hidden cursor-pointer">
+                      <img src="https://via.placeholder.com/100?text=Master+Cert" alt="Master Certificate"
+                        class="w-full h-full object-cover">
+                    </div>
+                  </div>
+                  <div>
+                    <h4 class="font-medium">Master of Interaction Design</h4>
+                    <p class="text-sm text-gray-600">NTUT (2019–2021)</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <div class="mr-4">
+                    <div class="w-16 h-16 bg-white rounded-lg overflow-hidden cursor-pointer">
+                      <img src="https://via.placeholder.com/100?text=PhD+Cert" alt="PhD Certificate"
+                        class="w-full h-full object-cover">
+                    </div>
+                  </div>
+                  <div>
+                    <h4 class="font-medium">Bachelor of IT</h4>
+                    <p class="text-sm text-gray-600">RMIT Vietnam University (2016–2019)</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Interests -->
+            <div>
+              <h3 class="text-2xl font-semibold mb-6 gradient-text text-left">Interests</h3>
+              <div class="grid grid-cols-2 gap-4">
+                <div class="bg-blue-50 p-6 rounded-lg text-center">
+                  <i class="fas fa-user-circle text-blue-500 text-3xl mb-3"></i>
+                  <h4 class="font-semibold">User Experience</h4>
+                </div>
+                <div class="bg-purple-50 p-6 rounded-lg text-center">
+                  <i class="fas fa-gamepad text-purple-500 text-3xl mb-3"></i>
+                  <h4 class="font-semibold">Game Design</h4>
+                </div>
+                <div class="bg-indigo-50 p-6 rounded-lg text-center">
+                  <i class="fas fa-laptop-code text-indigo-500 text-3xl mb-3"></i>
+                  <h4 class="font-semibold">HCI</h4>
+                </div>
+                <div class="bg-pink-50 p-6 rounded-lg text-center">
+                  <i class="fas fa-robot text-pink-500 text-3xl mb-3"></i>
+                  <h4 class="font-semibold">AI/ML</h4>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+          </div> <!-- End of Right Column -->
+        </div> <!-- End of Grid -->
       </div>
     </div>
   </section>
+
 
   <!-- Skills Section -->
   <section id="skills" class="py-16 bg-white">
@@ -356,7 +413,7 @@
                 <i class="fas fa-external-link-alt"></i> Live Demo
               </a>
               <a href="#"
-                class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-100 transition flex items-center gap-2">
+                class="px-4 py-2 border border-gray-300 rounded hover:bg-white transition flex items-center gap-2">
                 <i class="fab fa-github"></i> View Code
               </a>
             </div>
@@ -393,25 +450,63 @@
     </div>
   </section>
 
-  <!-- Awards Section -->
-  <section id="awards" class="py-16 bg-white">
-    <div class="awards container">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-center mb-12">Awards</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="bg-gray-50 rounded-lg shadow-sm p-6 border-l-4 border-blue-500">
-            <div class="flex items-center mb-3">
-              <i class="fas fa-trophy text-yellow-500 text-2xl mr-3"></i>
-              <h3 class="text-xl font-semibold">List of honors and recognitions</h3>
+  <!-- Recognition Section -->
+  <section id="recognition" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center mb-12">Recognition</h2>
+
+      <!-- Honors & Awards -->
+      <div class="mb-16">
+        <h3 class="text-2xl font-bold mb-8 flex items-center">
+          <i class="fas fa-trophy text-yellow-500 mr-3"></i>
+          Honors & Awards
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="honors-container">
+          <!-- Honors cards will be inserted here by JavaScript -->
+        </div>
+      </div>
+
+      <!-- Certifications & Participation -->
+      <div>
+        <h3 class="text-2xl font-bold mb-8 flex items-center">
+          <i class="fas fa-certificate text-blue-500 mr-3"></i>
+          Certifications & Participation
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="certs-container">
+          <!-- Certification cards will be inserted here by JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Recognition Modal -->
+    <div class="modal-overlay" id="recognition-modal">
+      <div class="modal-content bg-white rounded-lg shadow-xl w-full max-w-4xl max-h-[90vh] overflow-hidden">
+        <button
+          class="absolute top-4 right-4 z-10 bg-black bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-70"
+          id="close-recognition-modal">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="p-6">
+          <div class="flex flex-col md:flex-row gap-6">
+            <div class="md:w-1/3 flex justify-center">
+              <img id="modal-recognition-image" src="" alt="" class="max-h-64 object-contain rounded-lg shadow-md">
             </div>
-            <p class="text-gray-600">Detailed awards coming soon...</p>
-          </div>
-          <div class="bg-gray-50 rounded-lg shadow-sm p-6 border-l-4 border-purple-500">
-            <div class="flex items-center mb-3">
-              <i class="fas fa-medal text-purple-500 text-2xl mr-3"></i>
-              <h3 class="text-xl font-semibold">Academic Achievements</h3>
+            <div class="md:w-2/3">
+              <h2 class="text-2xl font-bold text-gray-800 mb-2" id="modal-recognition-title"></h2>
+              <div class="flex items-center text-gray-600 mb-4">
+                <i class="fas fa-building mr-2"></i>
+                <span id="modal-recognition-issuer"></span>
+              </div>
+              <div class="flex items-center text-gray-600 mb-4">
+                <i class="fas fa-calendar-alt mr-2"></i>
+                <span id="modal-recognition-date"></span>
+              </div>
+              <p class="text-gray-600 mb-6" id="modal-recognition-description"></p>
+              <a href="#" id="modal-recognition-link" target="_blank"
+                class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition flex items-center gap-2 inline-block">
+                <i class="fas fa-external-link-alt"></i> View Credential
+              </a>
             </div>
-            <p class="text-gray-600">Recognitions for research excellence and contributions to the field.</p>
           </div>
         </div>
       </div>

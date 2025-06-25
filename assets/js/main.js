@@ -50,16 +50,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (targetSection) {
         // Hide all sections
-        sections.forEach(sec => sec.classList.remove("section-show"));
+        sections.forEach(sec => {
+          sec.classList.remove("section-show");
+          sec.scrollTop = 0; // 🔁 Reset scroll for hidden sections
+        });
 
         // Show the target section
         targetSection.classList.add("section-show");
 
-        // Scroll smoothly
-        targetSection.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
+        // 🔁 Reset scroll to top for the visible section
+        targetSection.scrollTop = 0;
 
         // Close mobile menu if open
         if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
@@ -648,3 +648,198 @@ document.addEventListener("DOMContentLoaded", function () {
   renderProjects();
 });
 
+// Recognition Data
+const honors = [
+  {
+    id: 1,
+    title: "Hult Prize Winner",
+    issuer: "Hult Prize Foundation - NTUT",
+    date: "2022",
+    description: "Won the campus round of the prestigious Hult Prize competition for social entrepreneurship.",
+    image: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+    link: "#"
+  },
+  {
+    id: 2,
+    title: "Best Academic Paper Award",
+    issuer: "International Conference on Medical Design (MD 2020)",
+    date: "2020",
+    description: "Recognized for outstanding research contribution at the International Conference on Medical Design.",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    link: "#"
+  },
+  {
+    id: 3,
+    title: "Best Teamwork Award",
+    issuer: "NTUT International PBL Workshop",
+    date: "2023",
+    description: "Awarded for exceptional teamwork and collaboration in the international project-based learning workshop.",
+    image: "https://images.unsplash.com/photo-1571260898874-6f9e5066340b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1085&q=80",
+    link: "#"
+  }
+];
+
+const certifications = [
+  {
+    id: 1,
+    title: "NTUT Innovation Competition",
+    issuer: "NTUT",
+    date: "2020",
+    description: "Participated in the Innovation and Entrepreneurship Base Competition.",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    link: "#"
+  },
+  {
+    id: 2,
+    title: "Entrepreneurship Workshop",
+    issuer: "NKUST",
+    date: "2021",
+    description: "Participant in the NKUST Entrepreneurship Winter Workshop.",
+    image: "",
+    link: "#"
+  },
+  {
+    id: 3,
+    title: "Happy Technology Competition",
+    issuer: "Happy Technology",
+    date: "2022",
+    description: "Competitor in the Happy Technology Entrepreneurship Competition.",
+    image: "",
+    link: "#"
+  },
+  {
+    id: 4,
+    title: "IEEE CIS Summer School",
+    issuer: "IEEE",
+    date: "2022",
+    description: "Certificate of Participation in the IEEE CIS Summer School.",
+    image: "",
+    link: "#"
+  },
+  {
+    id: 5,
+    title: "Hult Prize Regional Summit",
+    issuer: "Hult Prize Foundation",
+    date: "2022",
+    description: "Competitor in the Hult Prize Taipei Regional Summit.",
+    image: "",
+    link: "#"
+  },
+  {
+    id: 6,
+    title: "Service Science Conference",
+    issuer: "ICSSI",
+    date: "2021",
+    description: "Participant in the International Conference on Service Science and Innovation.",
+    image: "",
+    link: "#"
+  },
+  {
+    id: 7,
+    title: "Grids & Clouds Symposium",
+    issuer: "ISGC",
+    date: "2021",
+    description: "Participant in the International Symposium on Grids & Clouds (ISGC 2021).",
+    image: "",
+    link: "#"
+  },
+  {
+    id: 8,
+    title: "LLM Fine Tuning Course",
+    issuer: "Udemy",
+    date: "2023",
+    description: "Certificate of Completion for 'Master LLM Fine Tuning: Llama with Hugging Face Transformers' course.",
+    image: "",
+    link: "#"
+  },
+  {
+    id: 9,
+    title: "Y.S Award Preliminary",
+    issuer: "Y.S Award",
+    date: "2023",
+    description: "Preliminary Round Participant in the 19th Y.S Award competition.",
+    image: "",
+    link: "#"
+  }
+];
+
+// Render Recognition Items
+function renderRecognition() {
+  const honorsContainer = document.getElementById('honors-container');
+  const certsContainer = document.getElementById('certs-container');
+
+  honors.forEach(item => {
+    honorsContainer.appendChild(createRecognitionCard(item));
+  });
+
+  certifications.forEach(item => {
+    certsContainer.appendChild(createRecognitionCard(item));
+  });
+}
+
+function createRecognitionCard(item) {
+  const card = document.createElement('div');
+  card.className = 'bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 cursor-pointer';
+  card.addEventListener('click', () => openRecognitionModal(item));
+
+  const imageUrl = item.image || 'https://cdn-icons-png.flaticon.com/512/3132/3132693.png';
+  const hasImage = !!item.image;
+
+  card.innerHTML = `
+        <div class="h-48 ${hasImage ? '' : 'bg-gray-100 flex items-center justify-center'}">
+          <img src="${imageUrl}" alt="${item.title}" class="w-full h-full ${hasImage ? 'object-cover' : 'w-24 h-24 object-contain opacity-50'}">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">${item.title}</h3>
+          <div class="flex items-center text-gray-600 mb-2">
+            <i class="fas fa-building text-sm mr-2"></i>
+            <span class="text-sm">${item.issuer}</span>
+          </div>
+          <div class="flex items-center text-gray-500">
+            <i class="fas fa-calendar-alt text-sm mr-2"></i>
+            <span class="text-sm">${item.date}</span>
+          </div>
+        </div>
+      `;
+  return card;
+}
+
+// Recognition Modal Functions
+function openRecognitionModal(item) {
+  const modal = document.getElementById('recognition-modal');
+  const imageUrl = item.image || 'https://cdn-icons-png.flaticon.com/512/3132/3132693.png';
+
+  document.getElementById('modal-recognition-title').textContent = item.title;
+  document.getElementById('modal-recognition-issuer').textContent = item.issuer;
+  document.getElementById('modal-recognition-date').textContent = item.date;
+  document.getElementById('modal-recognition-description').textContent = item.description;
+  document.getElementById('modal-recognition-image').src = imageUrl;
+  document.getElementById('modal-recognition-image').alt = `${item.title} from ${item.issuer}`;
+
+  const linkBtn = document.getElementById('modal-recognition-link');
+  if (item.link && item.link !== '#') {
+    linkBtn.href = item.link;
+    linkBtn.classList.remove('hidden');
+  } else {
+    linkBtn.classList.add('hidden');
+  }
+
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeRecognitionModal() {
+  document.getElementById('recognition-modal').classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+
+// Initialize Recognition Section
+document.addEventListener('DOMContentLoaded', function () {
+  renderRecognition();
+
+  // Event listeners
+  document.getElementById('close-recognition-modal').addEventListener('click', closeRecognitionModal);
+  document.getElementById('recognition-modal').addEventListener('click', function (e) {
+    if (e.target === this) closeRecognitionModal();
+  });
+});
