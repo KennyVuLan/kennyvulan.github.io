@@ -2,9 +2,8 @@
 <html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vu Hong Lan | Portfolio</title>
   <meta name="description"
     content="Vu Hong Lan — PhD candidate, UX researcher, interaction designer, and smart city innovator based in Taipei.">
@@ -13,303 +12,497 @@
 
   <!-- Favicons -->
   <link href="./assets/img/FavIcon.png" rel="icon">
-  <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-  <!-- Vendor CSS Files -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-
-  <!-- Template Main CSS File -->
-  <link rel="stylesheet" href="./assets/css/style.css" />
-
   <!-- Script -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
-<body>
-  <!-- Header Section -->
-  <header class="header" id="header">
-    <a class="logo" href="https://kennyvulan.github.io">
-      <img src="./assets/img/Logo.png" alt="Logo" style="height: 50px;" width="auto">
-    </a>
-    <button class="menu-toggle" id="menu-toggle">
-      <i class='bx bx-menu-close' id="icon-open"></i>
-      <i class='bx bx-menu-wider' id="icon-close" style="display: none;"></i>
-    </button>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbarMenu">
-      <ul class="navbar-nav">
-        <li><a class="nav-link active" href="#header">Home</a></li>
-        <li><a class="nav-link" href="#about">About</a></li>
-        <li><a class="nav-link" href="#skills">Skills</a></li>
-        <li><a class="nav-link" href="#projects">Projects</a></li>
-        <li><a class="nav-link" href="#publications">Publications</a></li>
-        <li><a class="nav-link" href="#awards">Awards</a></li>
-        <li><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  <!-- Hero Section -->
-  <header class="hero-section d-flex align-items-center" style="min-height: 100vh; padding-top: 48px;">
-    <div class="container">
-      <div class="row align-items-center">
-        <!-- Left Text -->
-        <div class="col-lg-6">
-          <h1 class="text-uppercase text-center text-lg-start" style="font-size: 5vw;">
-            <a href="https://kennyvulan.github.io" class="text-dark">Vu Hong Lan</a>
+<body class="font-sans bg-gray-50 text-gray-800">
+  <!-- Navigation -->
+  <nav class="fixed w-full bg-white shadow-sm z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <div class="flex-shrink-0 flex items-center">
+          <img src="http://kennyvulan.github.io/assets/img/Logo.png" alt="Logo" class="h-10 w-auto">
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-center space-x-8">
+            <a href="#header" class="nav-link gradient-text hover:text-blue-500 px-3 py-2 text-sm font-medium">Home</a>
+            <a href="#about" class="nav-link gradient-text hover:text-blue-500 px-3 py-2 text-sm font-medium">About</a>
+            <a href="#skills"
+              class="nav-link gradient-text hover:text-blue-500 px-3 py-2 text-sm font-medium">Skills</a>
+            <a href="#projects"
+              class="nav-link gradient-text hover:text-blue-500 px-3 py-2 text-sm font-medium">Projects</a>
+            <a href="#publications"
+              class="nav-link gradient-text hover:text-blue-500 px-3 py-2 text-sm font-medium">Publications</a>
+            <a href="#awards"
+              class="nav-link gradient-text hover:text-blue-500 px-3 py-2 text-sm font-medium">Awards</a>
+            <a href="#contact"
+              class="nav-link gradient-text hover:text-blue-500 px-3 py-2 text-sm font-medium">Contact</a>
+          </div>
+        </div>
+        <div class="-mr-2 flex md:hidden">
+          <button type="button" id="mobile-menu-button"
+            class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-500 focus:outline-none">
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="#header" class="gradient-text block px-3 py-2 text-base font-medium hover:text-blue-500">Home</a>
+        <a href="#about" class="gradient-text block px-3 py-2 text-base font-medium hover:text-blue-500">About</a>
+        <a href="#skills" class="gradient-text block px-3 py-2 text-base font-medium hover:text-blue-500">Skills</a>
+        <a href="#projects" class="gradient-text block px-3 py-2 text-base font-medium hover:text-blue-500">Projects</a>
+        <a href="#publications"
+          class="gradient-text block px-3 py-2 text-base font-medium hover:text-blue-500">Publications</a>
+        <a href="#awards" class="gradient-text block px-3 py-2 text-base font-medium hover:text-blue-500">Awards</a>
+        <a href="#contact" class="gradient-text block px-3 py-2 text-base font-medium hover:text-blue-500">Contact</a>
+      </div>
+    </div>
+  </nav>
+  <header id="header" class="min-h-screen flex items-center pt-16 md:pt-24">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row items-center lg:items-start">
+        <div class="w-full lg:w-1/2 mb-10 lg:mb-0">
+          <h1 class="text-4xl md:text-5xl font-bold text-center lg:text-left mb-4 text-uppercase">
+            <a href="https://kennyvulan.github.io" class="gradient-text-name">Vu Hong Lan</a>
           </h1>
-          <h2 class="text-center text-lg-start" style="font-size: 3.5vw;">
-            I'm a passionate <span class="typed" style="color: #681616;"></span>
-            <span class="typed-cursor">|</span><br>
-            based in Taipei
+          <h2 class="text-2xl md:text-3xl font-semibold text-center lg:text-left mb-6">
+            I'm a passionate <br><span class="gradient-text typed"></span><span class="typed-cursor">|</span><br>
           </h2>
-          <!-- <ul class="Words">
-            <li class="Words-line">
-              <p>&nbsp;</p>
-            </li>
-            <li class="Words-line">
-              <p>I'm a passionate</p>
-              <p>
-                <span class="typed" style="color: #681616;"></span>
-                <span class="typed-cursor">|</span>
-              </p>
-              <p>based in Taipei</p>
-              <p>&nbsp;</p>
-            </li>
-            <li class="Words-line">
-            </li>
-          </ul> -->
-          <div class="d-flex justify-content-center justify-content-lg-start social-links mt-3">
-            <a href="https://www.linkedin.com/in/lan-vu-phd/" target="_blank" class="linkedin">
-              <img src="./assets/img/linkedin.png" alt="Linkedin Icon" class="bi" style="width: 20px; height: 20px;">
+          <div class="flex justify-center lg:justify-start space-x-4">
+            <a href="https://www.linkedin.com/in/lan-vu-phd/" class="text-gray-700 hover:text-blue-600 transition">
+              <i class="fab fa-linkedin text-2xl"></i>
             </a>
-            <a href="https://github.com/KennyVuLan" target="_blank" class="github">
-              <img src="./assets/img/git.png" alt="Git Icon" class="bi" style="width: 20px; height: 20px;">
+            <a href="https://github.com/KennyVuLan" class="text-gray-700 hover:text-gray-900 transition">
+              <i class="fab fa-github text-2xl"></i>
             </a>
-            <a href="https://scholar.google.com/citations?user=bXznIt8AAAAJ&hl=en" target="_blank"
-              class="googlescholar">
-              <img src="./assets/img/scholar.png" alt="Scholar Icon" class="bi" style="width: 20px; height: 20px;">
+            <a href="https://scholar.google.com/citations?user=bXznIt8AAAAJ&hl=en"
+              class="text-gray-700 hover:text-blue-400 transition">
+              <i class="fas fa-graduation-cap text-2xl"></i>
             </a>
-            <a href="https://x.com/LanVuPhD" target="_blank" class="twitter">
-              <img src="./assets/img/x-icon.jpg" alt="X Icon" class="bi"
-                style="width: 20px; height: 20px; border-radius: 8px;">
+            <a href="https://x.com/LanVuPhD" class="text-gray-700 hover:text-blue-400 transition">
+              <i class="fab fa-twitter text-2xl"></i>
             </a>
-            <a href="https://www.instagram.com/kennyvulan/" target="_blank" class="instagram">
-              <img src="./assets/img/instagram.png" alt="Instagram Icon" class="bi" style="width: 20px; height: 20px;">
+            <a href="https://www.instagram.com/kennyvulan/" class="text-gray-700 hover:text-pink-600 transition">
+              <i class="fab fa-instagram text-2xl"></i>
             </a>
           </div>
         </div>
+      </div>
+    </div>
   </header>
-  <!-- ABOUT SECTION -->
-  <section id="about" class="about">
+
+  <!-- About Section -->
+  <section id="about" class="py-16 bg-white">
     <div class="about-me container">
-      <div class="row">
-
-        <!-- LEFT COLUMN -->
-        <div class="col-lg-4" data-aos="fade-right">
-          <div class="section-title">
-            <h2>About</h2>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+            <h3 class="text-2xl font-semibold mb-4 gradient-text">Interdisciplinary Design Technologist & Data-driven
+              Designer</h3>
+            <div class="md:w-1/2 flex justify-center">
+              <div class="relative">
+                <div
+                  class="absolute -inset-4 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur opacity-75">
+                </div>
+                <!-- <img src="./assets/img/Lan-coloured.png" alt="Vu Hong Lan"
+              class="relative w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-white">
+                  -->
+                <img src="./assets/img/Lan-coloured.png" alt="Vu Hong Lan"
+                  class="relative w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-white">
+              </div>
+            </div>
+            <p class="text-gray-600 mb-6">
+              A creative UX researcher with a strong foundation in data analytics, dedicated to designing and
+              implementing
+              innovative solutions that enhance user experiences. Passionate about understanding user behavior and
+              preferences to inform effective design decisions. Collaborates effectively with cross-functional teams to
+              deliver exceptional results.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h4 class="font-semibold text-gray-800 mb-2">Personal Info</h4>
+                <ul class="space-y-2">
+                  <li class="flex items-center">
+                    <i class="fas fa-language text-blue-500 mr-2"></i>
+                    <span>Vietnamese, English, Chinese</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-envelope text-blue-500 mr-2"></i>
+                    <span>kennyvulan@gmail.com</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800 mb-2">Professional Info</h4>
+                <ul class="space-y-2">
+                  <li class="flex items-center">
+                    <i class="fas fa-graduation-cap text-blue-500 mr-2"></i>
+                    <span>PhD Candidate in Design</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-briefcase text-blue-500 mr-2"></i>
+                    <span>Freelance: Available</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <img src="./assets/img/Lan-coloured.png" class="img-fluid d-block mx-auto" alt="">
+          <div class="md:w-1/2">
+            <h3 class="text-2xl font-semibold mb-6 gradient-text">Interests</h3>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-blue-50 p-6 rounded-lg">
+                <i class="fas fa-user-circle text-blue-500 text-3xl mb-3"></i>
+                <h4 class="font-semibold">User Experience</h4>
+              </div>
+              <div class="bg-purple-50 p-6 rounded-lg">
+                <i class="fas fa-gamepad text-purple-500 text-3xl mb-3"></i>
+                <h4 class="font-semibold">Game Design</h4>
+              </div>
+              <div class="bg-indigo-50 p-6 rounded-lg">
+                <i class="fas fa-laptop-code text-indigo-500 text-3xl mb-3"></i>
+                <h4 class="font-semibold">HCI</h4>
+              </div>
+              <div class="bg-pink-50 p-6 rounded-lg">
+                <i class="fas fa-robot text-pink-500 text-3xl mb-3"></i>
+                <h4 class="font-semibold">AI/ML</h4>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <!-- RIGHT COLUMN -->
-        <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-          <div class="section-title">
-            <div class="title-wrapper long">
-              <h2>Interdisciplinary Design Technologist &amp; Data-driven Designer</h2>
-            </div>
-          </div>
-          <p>
-            A creative UX researcher with a strong foundation in data analytics, dedicated to designing and
-            implementing
-            innovative solutions that enhance user experiences. Passionate about understanding user behavior and
-            preferences to inform effective design decisions. Collaborates effectively with cross-functional teams to
-            deliver exceptional results.
-          </p>
-
-          <!-- Your lists and interests can follow here -->
-          <div class="row">
-            <div class="col-lg-6">
-              <ul>
-                <li><i class="bi bi-chevron-right"></i> <strong>Language:</strong> <span>Vietnamese, English,
-                    Chinese</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>kennyvulan@gmail.com</span></li>
-              </ul>
-            </div>
-            <div class="col-lg-6">
-              <ul>
-                <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>PhD Candidate in Design</span>
-                </li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Interests -->
-          <div class="interests">
-            <div class="section-title">
-              <div class="title-wrapper short">
-                <h2>Interests</h2>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-3 col-md-4">
-                <div class="icon-box">
-                  <h3 class="box" style="color: #e39d2d;">User Experience</h3>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-4">
-                <div class="icon-box">
-                  <h3 class="box" style="color: #e39d2d;">Game Design</h3>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-4">
-                <div class="icon-box">
-                  <h3 class="box" style="color: #e39d2d;">HCI</h3>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-4">
-                <div class="icon-box">
-                  <h3 class="box" style="color: #e39d2d;">AI/ML</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div> <!-- END RIGHT COLUMN -->
-
-      </div> <!-- END ROW -->
-    </div> <!-- END CONTAINER -->
+      </div>
+    </div>
   </section>
 
-  <!-- ======= Skills  ======= -->
-  <section id="skills" class="skills">
-
+  <!-- Skills Section -->
+  <section id="skills" class="py-16 bg-white">
     <div class="skills container">
-
-      <div class="section-title">
-        <h2>Skills</h2>
-      </div>
-
-      <div class="row skills-content">
-
-        <div class="col-lg-6">
-
-          <div class="progress">
-            <span class="skill">UX Research and Assessment</span>
-            <!-- <span class="skill">UX Research <i class="val">80%</i></span> -->
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-              </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-8">Skills</h2>
+        <p class="text-lg text-center text-gray-600 max-w-3xl mx-auto mb-12">
+          I combine expertise in technical development, design, analytics, and interdisciplinary research to create
+          user-centric, innovative solutions for digital experiences, smart cities, and interactive systems.
+        </p>
+        <p class="text-sm text-center text-gray-500 mb-8">Click on any skill category to view detailed information</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Technical Skills Card -->
+          <div
+            class="skill-card bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg cursor-pointer"
+            onclick="showSkillDetails('technical')">
+            <i class="fas fa-code text-blue-500 text-3xl mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Technical Skills</h3>
+            <p class="text-gray-600 mb-4">Developing versatile software solutions across web, mobile, and game
+              platforms,
+              with a focus on responsive interfaces, database design, and modern programming languages.</p>
+            <div class="text-blue-500 font-medium flex items-center">
+              <span>More details</span>
+              <i class="fas fa-chevron-right ml-2"></i>
             </div>
           </div>
 
-          <div class="progress">
-            <span class="skill">Data Analysis</span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-              </div>
+          <!-- Design & Development Card -->
+          <div
+            class="skill-card bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg cursor-pointer"
+            onclick="showSkillDetails('design')">
+            <i class="fas fa-pencil-ruler text-purple-500 text-3xl mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Design & Development</h3>
+            <p class="text-gray-600 mb-4">Designing user-centered solutions and interactive experiences, from UX
+              research
+              and interface design to smart city and game development projects.</p>
+            <div class="text-purple-500 font-medium flex items-center">
+              <span>More details</span>
+              <i class="fas fa-chevron-right ml-2"></i>
             </div>
           </div>
 
-          <div class="progress">
-            <span class="skill">Design Thinking</span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-              </div>
+          <!-- Research & Analytics Card -->
+          <div
+            class="skill-card bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg cursor-pointer"
+            onclick="showSkillDetails('research')">
+            <i class="fas fa-chart-bar text-green-500 text-3xl mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Research & Analytics</h3>
+            <p class="text-gray-600 mb-4">Data science, statistical analysis, and research methodologies for UX studies,
+              spatial reasoning, and evaluation of interactive systems.</p>
+            <div class="text-green-500 font-medium flex items-center">
+              <span>More details</span>
+              <i class="fas fa-chevron-right ml-2"></i>
             </div>
           </div>
 
-          <div class="progress">
-            <span class="skill">Conception</span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-              </div>
+          <!-- Creative & Management Card -->
+          <div
+            class="skill-card bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg cursor-pointer"
+            onclick="showSkillDetails('creative')">
+            <i class="fas fa-lightbulb text-yellow-500 text-3xl mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Creative & Management</h3>
+            <p class="text-gray-600 mb-4">Creative tools for urban simulations and interactive installations, combined
+              with project management and team leadership skills.</p>
+            <div class="text-yellow-500 font-medium flex items-center">
+              <span>More details</span>
+              <i class="fas fa-chevron-right ml-2"></i>
             </div>
           </div>
-
         </div>
 
-        <div class="col-lg-6">
-
-          <div class="progress">
-            <span class="skill">Front-end Web Development</span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+        <!-- Skill Details Modal (hidden by default) -->
+        <div id="skillModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+          <div class="bg-white rounded-lg max-w-2xl w-full max-h-[80vh] overflow-y-auto">
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-4">
+                <h3 id="modalTitle" class="text-2xl font-bold"></h3>
+                <button onclick="hideSkillDetails()" class="text-gray-500 hover:text-gray-700">
+                  <i class="fas fa-times"></i>
+                </button>
               </div>
+              <div id="modalContent" class="space-y-4"></div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <div class="progress">
-            <span class="skill">Python</span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-              </div>
-            </div>
-          </div>
+  <!-- Projects Section -->
+  <section id="projects" class="py-16 bg-white">
+    <div class="projects container">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12">Projects</h2>
+        <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+          My projects reflect a blend of research, design, and technical development across diverse domains — from smart
+          city innovations and serious game design to immersive technologies and data-driven solutions. Each project
+          embodies my passion for creating impactful, user-centered experiences while integrating emerging technologies.
+          These works demonstrate my ability to bridge disciplines, collaborate across teams, and translate complex
+          ideas
+          into meaningful outcomes.
+        </p>
 
-          <div class="progress">
-            <span class="skill">SPSS</span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-              </div>
-            </div>
-          </div>
+        <p class="text-gray-700 mb-6">
+          To date, I have contributed to <span id="project-count" class="text-blue-500 font-bold text-xl"></span>
+          cross-disciplinary projects, with more in development as part of my ongoing research, teaching, and
+          professional
+          collaborations.
+        </p>
 
-          <div class="progress">
-            <span class="skill">NLP Applications</span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-              </div>
-            </div>
-          </div>
+        <div class="border-t border-gray-200 mb-8"></div>
 
+        <div class="flex flex-wrap gap-2 mb-10">
+          <button class="skill-filter px-4 py-2 border rounded-full text-sm font-medium hover:shadow-md active"
+            data-filter="all">All Projects</button>
+          <button class="skill-filter px-4 py-2 border rounded-full text-sm font-medium hover:shadow-md"
+            data-filter="technical">Technical</button>
+          <button class="skill-filter px-4 py-2 border rounded-full text-sm font-medium hover:shadow-md"
+            data-filter="design">Design & Development</button>
+          <button class="skill-filter px-4 py-2 border rounded-full text-sm font-medium hover:shadow-md"
+            data-filter="research">Research & Analytics</button>
+          <button class="skill-filter px-4 py-2 border rounded-full text-sm font-medium hover:shadow-md"
+            data-filter="creative">Creative & Management</button>
         </div>
 
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-container">
+          <!-- Project cards will be inserted here by JavaScript -->
+        </div>
       </div>
-
+      <!-- Modal -->
+      <div class="modal-overlay" id="project-modal">
+        <div
+          class="modal-content bg-white rounded-lg shadow-xl flex flex-col lg:flex-row w-full max-w-5xl max-h-[90vh] overflow-hidden">
+          <div class="modal-left w-full lg:w-1/2 p-0 relative">
+            <button
+              class="absolute top-4 right-4 z-10 bg-black bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-70"
+              id="close-modal">
+              <i class="fas fa-times"></i>
+            </button>
+            <div class="image-slider h-full">
+              <!-- Slider images will be inserted here by JavaScript -->
+            </div>
+            <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-2" id="slider-indicators">
+              <!-- Indicators will be inserted here by JavaScript -->
+            </div>
+            <button
+              class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-70 slider-nav"
+              data-direction="prev">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button
+              class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-70 slider-nav"
+              data-direction="next">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+          <div class="modal-right w-full lg:w-1/2 p-6 overflow-y-auto">
+            <h2 class="text-2xl font-bold text-gray-800 mb-2" id="modal-title">Project Title</h2>
+            <div class="flex flex-wrap gap-2 mb-4" id="modal-tags">
+              <!-- Tags will be inserted here by JavaScript -->
+            </div>
+            <p class="text-gray-600 mb-6" id="modal-description">Full project description goes here.</p>
+            <div class="mb-6">
+              <h3 class="text-lg font-semibold text-gray-800 mb-2">Skills Involved</h3>
+              <div class="flex flex-wrap gap-2" id="modal-skills">
+                <!-- Skills will be inserted here by JavaScript -->
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <a href="#"
+                class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition flex items-center gap-2">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+              <a href="#"
+                class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-100 transition flex items-center gap-2">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
-  <!-- End Skills -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="gallery">
-      <div class="project-card" onclick="openModal('modal1')">
-        <img src="./assets/img/project1-thumb.jpg" alt="Project 1 Thumbnail" />
-        <h3>Smart City Interactivity</h3>
-        <p>Doctoral research on thick data & digital twin in smart cities.</p>
+
+  <!-- Publications Section -->
+  <section id="publications" class="py-16 bg-white">
+    <div class="publications container">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12">Publications</h2>
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <div class="flex items-start mb-6">
+            <div class="bg-blue-100 p-3 rounded-full mr-4">
+              <i class="fas fa-book text-blue-500"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-1">List of academic works</h3>
+              <p class="text-gray-600">Detailed publications coming soon...</p>
+            </div>
+          </div>
+          <div class="border-t border-gray-200 pt-6">
+            <a href="https://scholar.google.com/citations?user=bXznIt8AAAAJ&hl=en"
+              class="text-blue-500 hover:text-blue-700 flex items-center">
+              <i class="fas fa-external-link-alt mr-2"></i>
+              View my Google Scholar profile
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="publications">
-    <h2>Publications</h2>
-    <p>List of academic works...</p>
-  </section>
-
-  <section id="awards">
-    <h2>Awards</h2>
-    <p>List of honors and recognitions...</p>
-  </section>
-
-  <!-- <div id="modal1" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('modal1')">&times;</span>
-      <img id="mainImage" src="assets/img/project1-main.jpg" alt="Main Project Image" />
-      <div class="thumbnail-row">
-        <img src="assets/img/project1-img1.jpg" onclick="changeMainImage(this)" />
-        <img src="assets/img/project1-img2.jpg" onclick="changeMainImage(this)" />
-      </div>
-      <div class="modal-description">
-        <p>Full project description with scrollable content. Exploring earthquake preparedness through digital twin and
-          chatbot integration.</p>
+  <!-- Awards Section -->
+  <section id="awards" class="py-16 bg-white">
+    <div class="awards container">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12">Awards</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-gray-50 rounded-lg shadow-sm p-6 border-l-4 border-blue-500">
+            <div class="flex items-center mb-3">
+              <i class="fas fa-trophy text-yellow-500 text-2xl mr-3"></i>
+              <h3 class="text-xl font-semibold">List of honors and recognitions</h3>
+            </div>
+            <p class="text-gray-600">Detailed awards coming soon...</p>
+          </div>
+          <div class="bg-gray-50 rounded-lg shadow-sm p-6 border-l-4 border-purple-500">
+            <div class="flex items-center mb-3">
+              <i class="fas fa-medal text-purple-500 text-2xl mr-3"></i>
+              <h3 class="text-xl font-semibold">Academic Achievements</h3>
+            </div>
+            <p class="text-gray-600">Recognitions for research excellence and contributions to the field.</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div> -->
+  </section>
 
-  <script src="script.js"></script>
-  <!-- Template Main JS File -->
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 bg-gradient-to-r from-blue-50 to-purple-50">
+    <div class="contact container">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12">Get In Touch</h2>
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+          <div class="md:flex">
+            <div class="md:w-1/2 bg-blue-500 text-white p-10">
+              <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+              <div class="space-y-4">
+                <div class="flex items-start">
+                  <i class="fas fa-envelope mt-1 mr-4"></i>
+                  <div>
+                    <h4 class="font-semibold">Email</h4>
+                    <p>kennyvulan@gmail.com</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-map-marker-alt mt-1 mr-4"></i>
+                  <div>
+                    <h4 class="font-semibold">Location</h4>
+                    <p>Taipei, Taiwan</p>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-8">
+                <h4 class="font-semibold mb-4">Connect with me</h4>
+                <div class="flex space-x-4">
+                  <a href="https://www.linkedin.com/in/lan-vu-phd/"
+                    class="text-white hover:text-blue-200 transition-colors duration-300">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                  </a>
+                  <a href="https://github.com/KennyVuLan"
+                    class="text-white hover:text-blue-200 transition-colors duration-300">
+                    <i class="fab fa-github text-2xl"></i>
+                  </a>
+                  <a href="https://scholar.google.com/citations?user=bXznIt8AAAAJ&hl=en"
+                    class="text-white hover:text-blue-200 transition-colors duration-300">
+                    <i class="fas fa-graduation-cap text-2xl"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="md:w-1/2 p-10">
+              <form class="space-y-6">
+                <div>
+                  <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                  <input type="text" id="name"
+                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                  <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                  <input type="email" id="email"
+                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                  <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                  <textarea id="message" rows="4"
+                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+                <div>
+                  <button type="submit"
+                    class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-300">
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="credits">
+    <div class="credits-inner flex items-center gap-2">
+      <!-- <img src="http://kennyvulan.github.io/assets/img/Logo.png" alt="Logo" class="h-6 w-auto"> -->
+      <div class="text text-xs">
+        <p class="text-gray-400 mb-0">© 2023 Vu Hong Lan. All rights reserved.</p>
+        <p class="text-gray-500 text-xs mt-0">Designed with passion in Taipei</p>
+      </div>
+    </div>
+  </div>
+
   <script src="./assets/js/main.js"></script>
 </body>
 
