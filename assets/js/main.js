@@ -693,7 +693,7 @@ const honors = [
     issuer: "Hult Prize Foundation - NTUT",
     date: "2022",
     description: "Won the campus round of the prestigious Hult Prize competition for social entrepreneurship.",
-    image: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+    image: "./assets/img/recognition/hult.jpg",
     link: "#"
   },
   {
@@ -702,7 +702,7 @@ const honors = [
     issuer: "International Conference on Medical Design (MD 2020)",
     date: "2020",
     description: "Recognized for outstanding research contribution at the International Conference on Medical Design.",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    image: "./assets/img/recognition/mdpaper.jpg",
     link: "#"
   },
   {
@@ -711,7 +711,7 @@ const honors = [
     issuer: "NTUT International PBL Workshop",
     date: "2023",
     description: "Awarded for exceptional teamwork and collaboration in the international project-based learning workshop.",
-    image: "https://images.unsplash.com/photo-1571260898874-6f9e5066340b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1085&q=80",
+    image: "./assets/img/recognition/pbl2023.jpg",
     link: "#"
   }
 ];
@@ -723,7 +723,7 @@ const certifications = [
     issuer: "NTUT",
     date: "2020",
     description: "Participated in the Innovation and Entrepreneurship Base Competition.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    image: "./assets/img/recognition/ntut_inno.jpg",
     link: "#"
   },
   {
@@ -732,7 +732,7 @@ const certifications = [
     issuer: "NKUST",
     date: "2021",
     description: "Participant in the NKUST Entrepreneurship Winter Workshop.",
-    image: "",
+    image: "./assets/img/recognition/nkust.jpg",
     link: "#"
   },
   {
@@ -741,7 +741,7 @@ const certifications = [
     issuer: "Happy Technology",
     date: "2022",
     description: "Competitor in the Happy Technology Entrepreneurship Competition.",
-    image: "",
+    image: "./assets/img/recognition/happytech.jpg",
     link: "#"
   },
   {
@@ -750,7 +750,7 @@ const certifications = [
     issuer: "IEEE",
     date: "2022",
     description: "Certificate of Participation in the IEEE CIS Summer School.",
-    image: "",
+    image: "./assets/img/recognition/cissummer.jpg",
     link: "#"
   },
   {
@@ -759,7 +759,7 @@ const certifications = [
     issuer: "Hult Prize Foundation",
     date: "2022",
     description: "Competitor in the Hult Prize Taipei Regional Summit.",
-    image: "",
+    image: "./assets/img/recognition/hult2.jpg",
     link: "#"
   },
   {
@@ -768,7 +768,7 @@ const certifications = [
     issuer: "ICSSI",
     date: "2021",
     description: "Participant in the International Conference on Service Science and Innovation.",
-    image: "",
+    image: "./assets/img/recognition/ICSSI.jpg",
     link: "#"
   },
   {
@@ -777,7 +777,7 @@ const certifications = [
     issuer: "ISGC",
     date: "2021",
     description: "Participant in the International Symposium on Grids & Clouds (ISGC 2021).",
-    image: "",
+    image: "./assets/img/recognition/ISGC2021.jpg",
     link: "#"
   },
   {
@@ -786,8 +786,8 @@ const certifications = [
     issuer: "Udemy",
     date: "2023",
     description: "Certificate of Completion for 'Master LLM Fine Tuning: Llama with Hugging Face Transformers' course.",
-    image: "",
-    link: "#"
+    image: "./assets/img/recognition/masterllm.jpg",
+    link: "https://www.udemy.com/certificate/UC-c628c66a-b4af-4b04-8fe2-22b332ce5747/"
   },
   {
     id: 9,
@@ -795,7 +795,7 @@ const certifications = [
     issuer: "Y.S Award",
     date: "2023",
     description: "Preliminary Round Participant in the 19th Y.S Award competition.",
-    image: "",
+    image: "./assets/img/recognition/19th.jpg",
     link: "#"
   }
 ];
