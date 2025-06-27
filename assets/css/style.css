@@ -4,6 +4,31 @@ html {
   scroll-padding-bottom: 100px;
 }
 
+.text-outline {
+  -webkit-text-stroke: 0.4px grey;
+  text-stroke: 0.5px grey;
+  /* for Firefox in future */
+}
+
+.section-label {
+  position: absolute;
+  top: 6rem;
+  left: 1rem;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  font-size: 0.85rem;
+  line-height: 1.2;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  color: #555;
+  z-index: 10;
+  pointer-events: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+
 /* background: linear-gradient(90deg, #ED213A, #ee9ca7); */
 .gradient-text {
   background: linear-gradient(90deg, #642B73, #C6426E);
@@ -158,6 +183,10 @@ html {
 }
 
 @media (max-width: 768px) {
+  .section-label {
+    display: none;
+  }
+
   .modal-content {
     flex-direction: column;
     max-height: 90vh;
@@ -168,34 +197,64 @@ html {
   .modal-right {
     width: 100% !important;
   }
+
+  /* Keep section absolute so only one shows at a time */
+  section {
+    position: absolute;
+    inset: 0;
+    width: 100vw;
+    height: auto;
+    overflow: hidden;
+  }
+
+  /* Let .container scroll instead */
+  section .container {
+    height: auto;
+    overflow-y: auto;
+    box-sizing: border-box;
+    min-height: 100vh;
+    padding-bottom: 10rem;
+  }
+
+  .mobile-bottom-gap {
+    height: 3rem;
+    /* or whatever space you want */
+    background: #fff;
+  }
 }
 
+/* ===== Desktop Styles ===== */
+@media (min-width: 769px) {
+  section .container {
+    height: 100vh !important;
+    min-height: 100vh;
+    padding-top: 50px;
+    padding-bottom: 7rem;
+  }
+}
+
+/* ===== Base Section Styles ===== */
 section {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  inset: 0;
   width: 100vw;
   height: 100vh;
-  overflow-y: auto;
-
+  overflow-y: hidden;
   opacity: 0;
   visibility: hidden;
-
-  background-color: rgba(255, 255, 255, 1);
+  background-color: #ffffff;
   transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
   z-index: 0;
-  /* base z-index */
 }
 
 section .container {
   position: relative;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   max-width: 100%;
   min-height: 100vh;
   padding: 50px;
-  padding-bottom: 5rem;
+  padding-bottom: 7rem;
   box-sizing: border-box;
   background-color: #ffffff;
   color: #000;
@@ -204,13 +263,13 @@ section .container {
 section.section-show {
   opacity: 1;
   visibility: visible;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow-y: auto;
   z-index: 1;
+}
+
+/* Only scroll inside scrollable container */
+section.scrollable .container {
+  overflow-y: auto;
+  height: 100vh;
 }
 
 .section-title h2 {

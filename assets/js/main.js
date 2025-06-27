@@ -880,3 +880,20 @@ document.addEventListener('DOMContentLoaded', function () {
     if (e.target === this) closeRecognitionModal();
   });
 });
+function showSection(id) {
+  document.querySelectorAll("section").forEach(sec => {
+    sec.classList.remove("section-show");
+  });
+
+  const target = document.getElementById(id);
+  if (target) {
+    target.classList.add("section-show");
+
+    // Prevent outer scroll
+    document.body.style.overflow = "hidden";
+
+    // Scroll section container to top
+    const container = target.querySelector(".container");
+    if (container) container.scrollTop = 0;
+  }
+}
