@@ -73,6 +73,10 @@ html {
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
+#projects {
+  scroll-margin-top: 4.5rem;
+}
+
 .project-card:hover .project-overlay {
   opacity: 1;
 }
@@ -116,8 +120,9 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
+  overflow-y: auto;
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 1000;
+  z-index: 50;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -125,6 +130,7 @@ html {
   visibility: hidden;
   transition: all 0.3s ease;
 }
+
 
 .modal-overlay.active {
   opacity: 1;
@@ -187,15 +193,27 @@ html {
     display: none;
   }
 
+  .projects.container {
+    padding-top: 4.5rem;
+    /* Adjust to match your navbar height */
+  }
+
+  .modal-overlay {
+    padding-top: 4.5rem;
+    align-items: flex-start;
+  }
+
   .modal-content {
     flex-direction: column;
     max-height: 90vh;
     overflow-y: auto;
+    padding-bottom: 3rem;
   }
 
   .modal-left,
   .modal-right {
     width: 100% !important;
+    /* padding-bottom: 6rem; */
   }
 
   /* Keep section absolute so only one shows at a time */
