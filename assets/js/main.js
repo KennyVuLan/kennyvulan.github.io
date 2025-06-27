@@ -52,21 +52,22 @@ document.addEventListener("DOMContentLoaded", function () {
         // Hide all sections
         sections.forEach(sec => {
           sec.classList.remove("section-show");
-          sec.scrollTop = 0; // 🔁 Reset scroll for hidden sections
         });
 
-        // Show the target section
+        // Show target section
         targetSection.classList.add("section-show");
 
-        // 🔁 Reset scroll to top for the visible section
-        targetSection.scrollTop = 0;
+        // ✅ Scroll the new section to top after it's visible
+        requestAnimationFrame(() => {
+          targetSection.scrollTop = 0;
+        });
 
-        // Close mobile menu if open
+        // Close mobile menu if needed
         if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
           mobileMenu.classList.add("hidden");
         }
 
-        // Update active class
+        // Update active link
         navLinks.forEach(l => l.classList.remove("active"));
         this.classList.add("active");
       }
@@ -238,6 +239,10 @@ function showSkillDetails(type) {
                             <h4 class="text-lg font-semibold mb-2 text-green-500">Quantitative & Qualitative Research</h4>
                             <p>UX Research, Spatial Reasoning Studies, Evaluation Methods</p>
                         </div>
+                        <div class="mb-6">
+                            <h4 class="text-lg font-semibold mb-2 text-green-500">AI Integration for Design & Prototyping</h4>
+                            <p>Integration of AI tools (e.g., ChatGPT, Gemini, Claude) for creative ideation, code generation, and design automation</p>
+                        </div>
                     `;
       break;
 
@@ -251,6 +256,10 @@ function showSkillDetails(type) {
                         <div>
                             <h4 class="text-lg font-semibold mb-2 text-yellow-500">Soft Skills & Management</h4>
                             <p>Project Management (Research Leadership, Delivery), Team Leadership (Cross-functional teams, Community Engagement), Customer Experience (Installations, Services), Event Planning (Community, Engagement Events), Technical Troubleshooting (Hardware/Software Diagnostics)</p>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold mb-2 text-yellow-500">Generative Design & AI Tools</h4>
+                            <p>ComfyUI (Workflow-based image generation), Stable Diffusion / ControlNet, Hunyuan 3D-2 (text-to-3D modeling for concept prototyping), Runway ML, Adobe Firefly, OpenAI GPTs for text/logic design assistance</p>
                         </div>
                     `;
       break;
@@ -277,11 +286,7 @@ document.addEventListener("DOMContentLoaded", function () {
       skills: ["LLMs", "Chatbot Development", "VOSViewer", "Design Research"],
       category: ["research", "technical"],
       images: [
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+        "./assets/img/smartcity.png"
       ]
     },
     {
@@ -293,11 +298,10 @@ document.addEventListener("DOMContentLoaded", function () {
       skills: ["Urban Design", "SWOT Analysis", "AHP"],
       category: ["research"],
       images: [
-        "https://images.unsplash.com/photo-1589254065878-42c9da997008?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1589254065878-42c9da997008?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1589254065878-42c9da997008?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1589254065878-42c9da997008?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1589254065878-42c9da997008?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+        "./assets/img/SDG_ESG/SDG_ESG3.png",
+        "./assets/img/SDG_ESG/SDG_ESG.png",
+        "./assets/img/SDG_ESG/SDG_ESG1.png",
+        "./assets/img/SDG_ESG/SDG_ESG2.png",
       ]
     },
     {
@@ -309,11 +313,10 @@ document.addEventListener("DOMContentLoaded", function () {
       skills: ["VGA Analysis", "depthMapX", "Axial Analysis", "Programming"],
       category: ["research"],
       images: [
-        "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+        "./assets/img/spatialanalysis/spatial_analysis_thumbnail.png",
+        "./assets/img/spatialanalysis/spatial_analysis.jpg",
+        "./assets/img/spatialanalysis/spatial_analysis1.jpg",
+        "./assets/img/spatialanalysis/spatial_analysis2.jpg"
       ]
     },
     {
@@ -324,12 +327,15 @@ document.addEventListener("DOMContentLoaded", function () {
       tags: ["#VR", "#education", "#spatialReasoning"],
       skills: ["Virtual Reality", "Educational Research"],
       category: ["research", "design"],
+      publicationLink: "https://ieeexplore.ieee.org/abstract/document/10549809",
       images: [
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+        "./assets/img/spatialreasoning/spatial_reasoning.png",
+        "./assets/img/spatialreasoning/spatial_reasoning1.png",
+        "./assets/img/spatialreasoning/spatial_reasoning2.png",
+        "./assets/img/spatialreasoning/spatial_reasoning3.png",
+        "./assets/img/spatialreasoning/spatial_reasoning4.png"
+
+
       ]
     },
     {
@@ -340,12 +346,9 @@ document.addEventListener("DOMContentLoaded", function () {
       tags: ["#speculativeDesign", "#AR", "#urbanHealth"],
       skills: ["Speculative Design", "UX Research"],
       category: ["design", "research"],
+      videoLink: "https://www.youtube.com/watch?v=o9P8H-0AuJo",
       images: [
-        "https://images.unsplash.com/photo-1508514177221-188e1eaf2d1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1508514177221-188e1eaf2d1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1508514177221-188e1eaf2d1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1508514177221-188e1eaf2d1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1508514177221-188e1eaf2d1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+        "./assets/img/ICHOS/ICHOS_thumbnail.png"
       ]
     },
     {
@@ -357,11 +360,7 @@ document.addEventListener("DOMContentLoaded", function () {
       skills: ["Programming", "WEKA Analysis"],
       category: ["technical", "research"],
       images: [
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+        "./assets/img/WEKA/imgclassification.png"
       ]
     },
     {
@@ -373,11 +372,11 @@ document.addEventListener("DOMContentLoaded", function () {
       skills: ["Augmented Reality", "Game Design", "Programming"],
       category: ["design", "creative"],
       images: [
-        "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+        "./assets/img/ARMonopoly/ARMNP.png",
+        "./assets/img/ARMonopoly/ARMNP1.jpg",
+        "./assets/img/ARMonopoly/ARMNP2.jpg",
+        "./assets/img/ARMonopoly/ARMNP3.jpg"
+
       ]
     },
     {
@@ -388,12 +387,14 @@ document.addEventListener("DOMContentLoaded", function () {
       tags: ["#soundDesign", "#TouchDesigner", "#installationArt"],
       skills: ["TouchDesigner", "Ableton Live", "Python", "Sound Design"],
       category: ["creative"],
+      videoLink: "https://youtu.be/b96D8tmbuPo",
       images: [
-        "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+        "./assets/img/HMW/HMW1.jpg",
+        "./assets/img/HMW/HMW2.jpg",
+        "./assets/img/HMW/HMW3.jpg",
+        "./assets/img/HMW/HMW4.jpg",
+        "./assets/img/HMW/HMW5.jpg",
+        "./assets/img/HMW/HMW6.jpg"
       ]
     },
     {
@@ -404,12 +405,19 @@ document.addEventListener("DOMContentLoaded", function () {
       tags: ["#Unity", "#gameDesign", "#CSharp"],
       skills: ["C#", "Unity", "Game Design"],
       category: ["creative"],
+      codeLink: "https://github.com/KennyVuLan/GMD-Gravity-Is-Your-Enemy",
       images: [
-        "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+        "./assets/img/GMD/thumbnailGIYE.png",
+        "./assets/img/GMD/Gameflow.png",
+        "./assets/img/GMD/Gameobject.png",
+        "./assets/img/GMD/GIYE1.JPG",
+        "./assets/img/GMD/GIYE2.JPG",
+        "./assets/img/GMD/GIYE3.JPG",
+        "./assets/img/GMD/GIYE4.JPG",
+        "./assets/img/GMD/GIYE5.JPG",
+        "./assets/img/GMD/GIYE6.JPG",
+        "./assets/img/GMD/GIYE7.JPG",
+        "./assets/img/GMD/GIYE8.JPG",
       ]
     },
     {
@@ -421,12 +429,12 @@ document.addEventListener("DOMContentLoaded", function () {
       skills: ["C#", "Unity", "Game Design"],
       category: ["creative"],
       images: [
-        "https://images.unsplash.com/photo-1434626881859-19439b315f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1434626881859-19439b315f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1434626881859-19439b315f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1434626881859-19439b315f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1434626881859-19439b315f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-      ]
+        "./assets/img/artichoke/Artichoke.png",
+        "./assets/img/artichoke/Character.png",
+        "./assets/img/artichoke/bee.png"
+      ],
+      liveLink: "",
+      codeLink: "",
     },
     {
       id: 11,
@@ -437,28 +445,23 @@ document.addEventListener("DOMContentLoaded", function () {
       skills: ["HTML", "CSS", "JavaScript", "A-Frame"],
       category: ["technical", "creative"],
       images: [
-        "https://images.unsplash.com/photo-1552664730-d306ca4b3ae8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1552664730-d306ca4b3ae8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1552664730-d306ca4b3ae8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1552664730-d306ca4b3ae8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1552664730-d306ca4b3ae8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-      ]
+        "./assets/img/WebVR/WebVR1.png",
+        "./assets/img/WebVR/WebVR2.jpg",
+        "./assets/img/WebVR/WebVR3.jpg"
+      ],
     },
     {
       id: 12,
       title: "ScanThis",
-      shortDesc: "An Android app for barcode scanning with geolocation pricing.",
-      description: "Mobile app that lets users scan barcodes and view prices based on location to support informed shopping.",
+      shortDesc: "An Android barcode scanner app with geolocation-based pricing — built during my time at RMIT Vietnam as an IT student.",
+      description: "This was an early mobile development project created while studying at RMIT University Vietnam. The app allows users to scan barcodes and view pricing information based on location. It served as an exploration into Android app development, barcode integration, and simple geolocation logic. While it's a beginner-level project, it reflects my initial experience with building functional Android applications and experimenting with user-centric features.",
       tags: ["#Android", "#mobileApp", "#barcodeScanner"],
       skills: ["Android Development", "Programming"],
       category: ["technical"],
       images: [
-        "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-      ]
+        "./assets/img/ScanThis/thumbnail.png"
+      ],
+      codeLink: "https://github.com/KennyVuLan/ScanThis",
     }
   ];
 
@@ -487,7 +490,7 @@ document.addEventListener("DOMContentLoaded", function () {
       projectCard.className = 'project-card bg-white rounded-lg shadow-md overflow-hidden cursor-pointer h-80 relative';
       projectCard.innerHTML = `
                     <div class="h-full w-full relative">
-                        <img src="${project.images[0]}"  || 'https://via.placeholder.com/400x300?text=No+Image'} alt="${project.title}" class="project-image w-full h-full object-cover">
+                        <img src="${project.images[0]}"  || 'https://via.placeholder.com/400x300?text=No+Image'} alt="${project.title}" class="project-image w-full h-full object-content">
                         <div class="blur-overlay"></div>
                         <div class="absolute bottom-0 left-0 right-0 p-6 text-white z-10">
                             <h3 class="text-xl font-bold mb-2">${project.title}</h3>
@@ -525,7 +528,41 @@ document.addEventListener("DOMContentLoaded", function () {
   function openModal(project) {
     currentProject = project;
     currentSlide = 0;
+    // Set live and code links (optional)
+    const liveBtn = document.getElementById("modal-live-link");
+    const codeBtn = document.getElementById("modal-code-link");
+    const pubBtn = document.getElementById("modal-publication-link");
+    const videoBtn = document.getElementById("modal-video-link");
 
+    if (project.videoLink) {
+      videoBtn.href = project.videoLink;
+      videoBtn.classList.remove("opacity-50", "pointer-events-none", "cursor-not-allowed");
+    } else {
+      videoBtn.href = "#";
+      videoBtn.classList.add("opacity-50", "pointer-events-none", "cursor-not-allowed");
+    }
+    if (project.publicationLink) {
+      pubBtn.href = project.publicationLink;
+      pubBtn.classList.remove("opacity-50", "pointer-events-none", "cursor-not-allowed");
+    } else {
+      pubBtn.href = "#";
+      pubBtn.classList.add("opacity-50", "pointer-events-none", "cursor-not-allowed");
+    }
+    if (project.liveLink) {
+      liveBtn.href = project.liveLink;
+      liveBtn.classList.remove('opacity-50', 'pointer-events-none', 'cursor-not-allowed');
+    } else {
+      liveBtn.href = "#";
+      liveBtn.classList.add('opacity-50', 'pointer-events-none', 'cursor-not-allowed');
+    }
+
+    if (project.codeLink) {
+      codeBtn.href = project.codeLink;
+      codeBtn.classList.remove('opacity-50', 'pointer-events-none', 'cursor-not-allowed');
+    } else {
+      codeBtn.href = "#";
+      codeBtn.classList.add('opacity-50', 'pointer-events-none', 'cursor-not-allowed');
+    }
     // Set modal content
     document.getElementById('modal-title').textContent = project.title;
     document.getElementById('modal-description').textContent = project.description;
@@ -550,7 +587,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const img = document.createElement('img');
       img.src = image;
       img.alt = `${project.title} - Image ${index + 1}`;
-      img.className = `slider-image w-full h-full object-cover ${index === 0 ? 'active' : ''}`;
+      img.className = `slider-image w-full h-full object-content ${index === 0 ? 'active' : ''}`;
       sliderContainer.appendChild(img);
     });
 
@@ -787,7 +824,7 @@ function createRecognitionCard(item) {
 
   card.innerHTML = `
         <div class="h-48 ${hasImage ? '' : 'bg-gray-100 flex items-center justify-center'}">
-          <img src="${imageUrl}" alt="${item.title}" class="w-full h-full ${hasImage ? 'object-cover' : 'w-24 h-24 object-contain opacity-50'}">
+          <img src="${imageUrl}" alt="${item.title}" class="w-full h-full ${hasImage ? 'object-content' : 'w-24 h-24 object-contain opacity-50'}">
         </div>
         <div class="p-6">
           <h3 class="text-xl font-semibold mb-2">${item.title}</h3>

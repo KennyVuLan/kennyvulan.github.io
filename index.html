@@ -11,7 +11,7 @@
     content="Vu Hong Lan, UX Research, Interaction Design, Portfolio, Smart City, Digital Twin, PhD Design, Taipei">
 
   <!-- Favicons -->
-  <link href="./assets/img/FavIcon.png" rel="icon">
+  <link href="./assets/img/websrc/FavIcon.png" rel="icon">
   <!-- Script -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -24,7 +24,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16 items-center">
         <div class="flex-shrink-0 flex items-center">
-          <img src="http://kennyvulan.github.io/assets/img/Logo.png" alt="Logo" class="h-10 w-auto">
+          <img src="./assets/img/websrc/Logo.png" alt="Logo" class="h-10 w-auto">
         </div>
         <div class="hidden md:block">
           <div class="ml-10 flex items-center space-x-8">
@@ -102,10 +102,18 @@
         </div>
       </div>
     </div>
+    <div class="credits">
+      <div class="credits-inner flex items-center gap-2">
+        <div class="text text-xs">
+          <p class="text-gray-400 mb-0">© 2023 Vu Hong Lan. All rights reserved.</p>
+          <p class="text-gray-500 text-xs mt-0">Designed with passion in Taipei</p>
+        </div>
+      </div>
+    </div>
   </header>
 
   <!-- About Section -->
-  <section id="about" class="py-16 bg-white">
+  <section id="about" class="py-16 bg-white pb-20 sm:pb-32">
     <div class="about-me container">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
@@ -177,7 +185,10 @@
               <ul class="space-y-4">
                 <li class="flex items-start">
                   <div class="mr-4">
-                    <div class="w-16 h-16 bg-white rounded-lg"></div>
+                    <div class="w-16 h-16 bg-white rounded-lg overflow-hidden cursor-pointer">
+                      <img src="./assets/img/uLogo/NTUT.jpg" alt="Master Certificate"
+                        class="w-full h-full object-contain">
+                    </div>
                   </div>
                   <div>
                     <h4 class="font-medium">PhD in Design</h4>
@@ -187,8 +198,8 @@
                 <li class="flex items-start">
                   <div class="mr-4">
                     <div class="w-16 h-16 bg-white rounded-lg overflow-hidden cursor-pointer">
-                      <img src="https://via.placeholder.com/100?text=Master+Cert" alt="Master Certificate"
-                        class="w-full h-full object-cover">
+                      <img src="./assets/img/uLogo/NTUT.jpg" alt="Master Certificate"
+                        class="w-full h-full object-contain">
                     </div>
                   </div>
                   <div>
@@ -199,8 +210,8 @@
                 <li class="flex items-start">
                   <div class="mr-4">
                     <div class="w-16 h-16 bg-white rounded-lg overflow-hidden cursor-pointer">
-                      <img src="https://via.placeholder.com/100?text=PhD+Cert" alt="PhD Certificate"
-                        class="w-full h-full object-cover">
+                      <img src="./assets/img/uLogo/RMIT.png" alt="Master Certificate"
+                        class="w-full h-full object-contain">
                     </div>
                   </div>
                   <div>
@@ -239,9 +250,8 @@
     </div>
   </section>
 
-
   <!-- Skills Section -->
-  <section id="skills" class="py-16 bg-white">
+  <section id="skills" class="py-16 bg-white pb-20 sm:pb-32">
     <div class="skills container">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-center mb-8">Skills</h2>
@@ -329,7 +339,7 @@
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="py-16 bg-white">
+  <section id="projects" class="py-16 bg-white pb-20 sm:pb-32">
     <div class="projects container">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-center mb-12">Projects</h2>
@@ -407,15 +417,30 @@
                 <!-- Skills will be inserted here by JavaScript -->
               </div>
             </div>
-            <div class="flex gap-4">
-              <a href="#"
-                class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition flex items-center gap-2">
-                <i class="fas fa-external-link-alt"></i> Live Demo
+            <div class="mt-4 flex flex-col items-center gap-3">
+              <!-- Full-width Publication Button -->
+              <a id="modal-publication-link" href="#" target="_blank"
+                class="w-full max-w-sm px-4 py-2 border border-blue-500 text-blue-500 rounded hover:bg-blue-50 transition flex items-center justify-center gap-2">
+                <i class="fas fa-book"></i> Publication
               </a>
-              <a href="#"
-                class="px-4 py-2 border border-gray-300 rounded hover:bg-white transition flex items-center gap-2">
-                <i class="fab fa-github"></i> View Code
-              </a>
+
+              <!-- Group of buttons below, stacked and centered -->
+              <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full max-w-sm justify-center">
+                <a id="modal-live-link" href="#" target="_blank"
+                  class="flex-1 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition flex items-center justify-center gap-2">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+
+                <a id="modal-code-link" href="#" target="_blank"
+                  class="flex-1 px-4 py-2 border border-gray-300 rounded hover:bg-white transition flex items-center justify-center gap-2">
+                  <i class="fab fa-github"></i> View Code
+                </a>
+
+                <a id="modal-video-link" href="#" target="_blank"
+                  class="flex-1 px-4 py-2 border border-red-500 text-red-500 rounded hover:bg-red-50 transition flex items-center justify-center gap-2">
+                  <i class="fas fa-play-circle"></i> Watch Video
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -424,7 +449,7 @@
   </section>
 
   <!-- Publications Section -->
-  <section id="publications" class="py-16 bg-white">
+  <section id="publications" class="py-16 bg-white pb-20 sm:pb-32">
     <div class="publications container">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-center mb-12">Publications</h2>
@@ -451,7 +476,7 @@
   </section>
 
   <!-- Recognition Section -->
-  <section id="recognition" class="py-16 bg-white">
+  <section id="recognition" class="py-16 bg-white pb-20 sm:pb-32">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-bold text-center mb-12">Recognition</h2>
 
@@ -514,7 +539,7 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-16 bg-gradient-to-r from-blue-50 to-purple-50">
+  <section id="contact" class="py-16 bg-gradient-to-r from-blue-50 to-purple-50 pb-20 sm:pb-32">
     <div class="contact container">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-center mb-12">Get In Touch</h2>
@@ -586,17 +611,6 @@
       </div>
     </div>
   </section>
-
-
-  <div class="credits">
-    <div class="credits-inner flex items-center gap-2">
-      <!-- <img src="http://kennyvulan.github.io/assets/img/Logo.png" alt="Logo" class="h-6 w-auto"> -->
-      <div class="text text-xs">
-        <p class="text-gray-400 mb-0">© 2023 Vu Hong Lan. All rights reserved.</p>
-        <p class="text-gray-500 text-xs mt-0">Designed with passion in Taipei</p>
-      </div>
-    </div>
-  </div>
 
   <script src="./assets/js/main.js"></script>
 </body>

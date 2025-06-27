@@ -1,5 +1,7 @@
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  scroll-padding-bottom: 100px;
 }
 
 /* background: linear-gradient(90deg, #ED213A, #ee9ca7); */
@@ -168,20 +170,6 @@ html {
   }
 }
 
-/* section {
-  overflow: hidden;
-  position: absolute;
-  width: 100%;
-  top: 140px;
-  bottom: 100%;
-  opacity: 0;
-  background-color: rgba(255, 255, 255, 0.97);
-  backdrop-filter: none;
-  visibility: hidden;
-  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
-  z-index: 0;
-} */
-
 section {
   position: absolute;
   top: 0;
@@ -203,11 +191,11 @@ section {
 section .container {
   position: relative;
   height: 100vh;
-  padding-bottom: 80px;
   width: 100%;
   max-width: 100%;
   min-height: 100vh;
   padding: 50px;
+  padding-bottom: 5rem;
   box-sizing: border-box;
   background-color: #ffffff;
   color: #000;
@@ -267,7 +255,7 @@ body {
 body::before {
   content: "";
   position: fixed;
-  background: #ffffff url("/assets/img/bg.png") top right no-repeat;
+  background: #ffffff url("/assets/img/websrc/bg.png") top right no-repeat;
   background-size: cover;
   left: 0;
   right: 0;
@@ -341,7 +329,7 @@ body::before {
   body::before {
     background:
       linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
-      url('../img/bg1.png') no-repeat center bottom;
+      url('../img/websrc/bg1.png') no-repeat center bottom;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
