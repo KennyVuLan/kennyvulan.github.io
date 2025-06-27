@@ -413,13 +413,14 @@
       <!-- Modal -->
       <div class="modal-overlay" id="project-modal">
         <div
-          class="modal-content bg-white rounded-lg shadow-xl flex flex-col lg:flex-row w-full max-w-5xl max-h-[90vh] overflow-hidden">
+          class="modal-content relative bg-white rounded-lg shadow-xl flex flex-col lg:flex-row w-full max-w-5xl max-h-[90vh] overflow-hidden">
+          <button
+            class="absolute z-10 bg-black bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-70 right-4 top-4 lg:top-4 lg:right-4 lg:absolute md:absolute sm:top-4 sm:right-4 sm:left-auto"
+            id="close-modal">
+            <i class="fas fa-times"></i>
+          </button>
           <div class="modal-left w-full lg:w-1/2 p-0 relative">
-            <button
-              class="absolute top-4 right-4 z-10 bg-black bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-70"
-              id="close-modal">
-              <i class="fas fa-times"></i>
-            </button>
+
             <div class="image-slider h-full">
               <!-- Slider images will be inserted here by JavaScript -->
             </div>
