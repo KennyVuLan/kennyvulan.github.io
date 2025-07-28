@@ -286,8 +286,9 @@ section.section-show {
 
 /* Only scroll inside scrollable container */
 section.scrollable .container {
+  max-height: 80vh;
+  /* Or any appropriate height */
   overflow-y: auto;
-  height: 100vh;
 }
 
 .section-title h2 {
