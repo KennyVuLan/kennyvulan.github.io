@@ -510,16 +510,15 @@ document.addEventListener("DOMContentLoaded", function () {
     // Add "More Projects Coming Soon" placeholder if showing all projects
     if (filter === 'all') {
       const placeholderCard = document.createElement('div');
-      placeholderCard.className = 'project-card bg-white rounded-lg shadow-md overflow-hidden h-80';
+      placeholderCard.className = 'project-card more-project-coming-soon bg-white rounded-lg shadow-md overflow-hidden h-80';  // Added the specific class
       placeholderCard.innerHTML = `
-                    <div class="bg-gray-100 w-full h-64 flex items-center justify-center">
-                        <i class="fas fa-plus text-gray-400 text-4xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">More Projects Coming Soon</h3>
-                        <p class="text-gray-600">Currently working on exciting new projects in UX and data-driven design.</p>
-                    </div>
-                `;
+    <div class="w-full h-64 relative">
+      <div class="absolute bottom-0 left-0 right-0 p-6 text-white bg-black bg-opacity-50 text-center">
+        <h3 class="text-xl font-bold mb-2">More Projects Coming Soon</h3>
+        <p class="text-gray-600">Currently working on exciting new projects in UX and data-driven design.</p>
+      </div>
+    </div>
+  `;
       projectsContainer.appendChild(placeholderCard);
     }
   }
