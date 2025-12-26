@@ -193,9 +193,9 @@ html {
     display: none;
   }
 
+  /* Projects padding fix */
   .projects.container {
     padding-top: 4.5rem;
-    /* Adjust to match your navbar height */
   }
 
   .modal-overlay {
@@ -213,31 +213,47 @@ html {
   .modal-left,
   .modal-right {
     width: 100% !important;
-    /* padding-bottom: 6rem; */
   }
 
-  /* Keep section absolute so only one shows at a time */
+  /* Mobile: Section handles scrolling, not container */
   section {
     position: absolute;
     inset: 0;
     width: 100vw;
-    height: auto;
-    overflow: hidden;
+    height: 100vh;
+    /* Fallback */
+    height: 100dvh;
+    /* Modern mobile viewport */
+    overflow-y: auto;
+    /* Allow section to scroll */
+    overflow-x: hidden;
+    padding-bottom: 0;
   }
 
-  /* Let .container scroll instead */
+  /* Container adjusts to fit content with safe padding */
   section .container {
-    height: auto;
-    overflow-y: auto;
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible;
+    /* Let parent scroll */
+    padding: 80px 20px 140px 20px;
+    /* Top, Right, Bottom (for credits), Left */
     box-sizing: border-box;
-    min-height: 100vh;
-    padding-bottom: 10rem;
+  }
+
+  /* Ensure text doesn't hit edges */
+  h1,
+  h2,
+  h3,
+  p,
+  div {
+    max-width: 100%;
   }
 
   .mobile-bottom-gap {
     height: 3rem;
-    /* or whatever space you want */
-    background: #fff;
+    background: transparent;
+    display: block;
   }
 }
 
