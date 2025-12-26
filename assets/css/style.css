@@ -374,12 +374,13 @@ body::before {
 @media (min-width: 1024px) {
 
   /* Lock sections to viewport height on desktop to prevent scrolling */
+  /* Allow sections to grow naturally on desktop */
   section#about,
   section#skills {
-    height: 100vh;
+    height: auto;
     min-height: 100vh;
-    overflow: hidden;
-    /* Prevent scroll */
+    overflow: visible;
+    /* Allow scroll */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -388,12 +389,13 @@ body::before {
   }
 
   /* Reset container padding for 100vh center alignment */
+  /* Reset container padding for natural flow */
   section#about .container,
   section#skills .container {
     height: auto !important;
     min-height: auto;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding-top: 80px;
+    padding-bottom: 80px;
     justify-content: center;
   }
 
