@@ -73,6 +73,18 @@ html {
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
+
+/* Publication Card Styles */
+.publication-card {
+  border-left: 4px solid #3b82f6;
+  transition: all 0.3s ease;
+}
+
+.publication-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
 #projects {
   scroll-margin-top: 4.5rem;
 }
