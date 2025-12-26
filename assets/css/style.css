@@ -248,8 +248,8 @@ html {
     min-height: auto !important;
     overflow: visible;
     /* Let parent scroll */
-    padding: 80px 20px 140px 20px;
-    /* Top, Right, Bottom (for credits), Left */
+    padding: 80px 20px 60px 20px;
+    /* Top, Right, Bottom (reduced), Left */
     box-sizing: border-box;
   }
 
@@ -361,13 +361,225 @@ body {
 body::before {
   content: "";
   position: fixed;
-  background: #ffffff url("/assets/img/websrc/bg.png") top right no-repeat;
+  background: #ffffff url("../img/websrc/bg.png") top right no-repeat;
   background-size: cover;
   left: 0;
   right: 0;
   top: 0;
   height: 100vh;
   z-index: -1;
+}
+
+/* ===== Desktop Styles ===== */
+@media (min-width: 1024px) {
+
+  /* Lock sections to viewport height on desktop to prevent scrolling */
+  section#about,
+  section#skills {
+    height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+    /* Prevent scroll */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Reset container padding for 100vh center alignment */
+  section#about .container,
+  section#skills .container {
+    height: auto !important;
+    min-height: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    justify-content: center;
+  }
+
+  /* === Compact About Section for Desktop === */
+  #about .about-me.container {
+    padding-top: 0;
+  }
+
+  #about .grid {
+    gap: 1.5rem;
+    /* Tighter gap */
+    align-items: center;
+  }
+
+  /* Make profile image smaller to fit screen */
+  #about .w-80 {
+    width: 14rem;
+    height: 14rem;
+  }
+
+  /* Compact text spacing */
+  #about h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+  }
+
+  #about p {
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  #about .space-y-12> :not([hidden])~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: 1rem;
+    /* Much tighter vertical spacing */
+  }
+
+  #about .mb-10 {
+    margin-bottom: 1rem;
+  }
+
+  /* === Compact Skills Section for Desktop === */
+  #skills .skills.container {
+    padding-top: 0;
+  }
+
+  #skills p.text-lg {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    max-width: 80%;
+  }
+
+  #skills .mb-8 {
+    margin-bottom: 1rem;
+    /* Reduce prominence of instruction spacing */
+  }
+
+  #skills .grid {
+    gap: 1rem;
+    /* Tighter grid */
+  }
+
+  #skills .skill-card {
+    padding: 1rem 1.25rem;
+    /* Smaller cards */
+  }
+
+  #skills .skill-card i {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  #skills .skill-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  #skills .skill-card p {
+    font-size: 0.85rem;
+    margin-bottom: 0;
+  }
+
+  /* === BALANCED Compact About Section for Desktop (100vh fit) === */
+  #about .about-me.container {
+    padding-top: 0 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh !important;
+  }
+
+  #about .grid {
+    gap: 2rem !important;
+    /* Balanced gap */
+    align-items: center;
+  }
+
+  /* Restore Profile Image Size (Balanced) */
+  #about .w-80 {
+    width: 17rem !important;
+    height: 17rem !important;
+  }
+
+  #about .w-64 {
+    width: 17rem !important;
+    height: 17rem !important;
+  }
+
+  /* Compact text */
+  #about h3.text-2xl {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  #about p.text-gray-600 {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1rem !important;
+    display: block;
+    -webkit-line-clamp: none;
+    overflow: visible;
+  }
+
+  #about .space-y-8> :not([hidden])~ :not([hidden]) {
+    margin-top: 0.75rem !important;
+  }
+
+  /* Education Section Compact */
+  #about .space-y-12> :not([hidden])~ :not([hidden]) {
+    margin-top: 0.75rem !important;
+  }
+
+  /* Personal/Professional Info Compact */
+  #about h4.font-semibold {
+    font-size: 0.95rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  #about ul.space-y-2> :not([hidden])~ :not([hidden]) {
+    margin-top: 0.25rem !important;
+  }
+
+  #about li {
+    font-size: 0.9rem !important;
+  }
+
+  /* Right Column Compact */
+  #about .mb-6 {
+    margin-bottom: 0.75rem !important;
+  }
+
+  #about .text-2xl {
+    font-size: 1.4rem !important;
+  }
+
+  #about .w-16 {
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+  }
+
+  /* Medium logos */
+  #about .space-y-4> :not([hidden])~ :not([hidden]) {
+    margin-top: 0.5rem !important;
+  }
+
+  #about .p-6 {
+    padding: 1rem !important;
+  }
+
+  #about .text-3xl {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  /* Restore Scroll for Large Sections */
+  section#projects .container,
+  section#publications .container,
+  section#recognition .container,
+  section#contact .container {
+    height: auto !important;
+    min-height: 100vh;
+    overflow-y: auto !important;
+    max-height: 100vh !important;
+    padding-bottom: 4rem !important;
+  }
 }
 
 .section-title h2 {
