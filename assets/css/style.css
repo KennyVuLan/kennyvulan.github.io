@@ -694,3 +694,32 @@ body::before {
     opacity: 0;
   }
 }
+
+.contact-image-bg {
+  background-color: #2a2a2a;
+  /* Fallback dark color */
+  background-image: url('../img/websrc/Lan.png');
+  background-size: auto 115%;
+  /* Slight zoom as requested "zoom just right" and fill vertical */
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  /* Place image on the right */
+  position: relative;
+}
+
+.contact-image-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 40%, rgba(0, 0, 0, 0.1) 100%);
+  /* Horizontal gradient: Dark on left for text, transparent on right for image */
+  z-index: 1;
+}
+
+.contact-image-bg>* {
+  position: relative;
+  z-index: 2;
+}
