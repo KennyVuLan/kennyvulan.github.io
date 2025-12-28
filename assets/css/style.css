@@ -574,13 +574,24 @@ body::before {
   /* Restore Scroll for Large Sections */
   section#projects .container,
   section#publications .container,
-  section#recognition .container,
-  section#contact .container {
+  section#recognition .container {
     height: auto !important;
     min-height: 100vh;
     overflow-y: auto !important;
     max-height: 100vh !important;
     padding-bottom: 4rem !important;
+  }
+
+  /* Contact section customized to fit without scroll if possible */
+  section#contact .container {
+    height: 100vh !important;
+    min-height: 100vh;
+    padding-bottom: 2rem !important;
+    /* Some bottom padding but not 4rem */
+    overflow: hidden;
+    /* Prevent internal scroll */
+    padding-top: 60px;
+    /* Ensure top spacing matches other sections or looks good */
   }
 }
 
